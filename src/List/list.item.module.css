@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    gap: 10px;
+    max-width: 300px;
+    border-radius: 24px;
+    align-items: center;
+    padding: 8px;
+    white-space: nowrap;
+    transition: .1s linear all;
+    cursor: pointer;
+
+}
+
+.container:hover {
+    background-color: #FCA311;
+}
+
+.text {
+    font-weight: 500;
+    color: #fff;
+}
+
+.icon {
+    border-radius: 100%;
+}

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+  box-sizing: border-box;
+  overflow:auto ;
+
+  margin: 0 auto;
+  background-color:#f0f0f0;
+  max-width: 900px;
+  width: 100%;
+  font-family: 'Rubik', sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
