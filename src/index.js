@@ -6,6 +6,8 @@ import PaymentLayout from './Payment/PaymentLayout';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import PaymentNetwork from './Payment/PaymentNetwork';
 import PaymentCurrency from './Payment/PaymentCurrency';
+import PaymentProccess from './Payment/PaymentProccess';
+import PaymentSuccessful from './Payment/PaymentSuccessful';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
   {
@@ -14,14 +16,22 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/payment/:id",
-        element: <PaymentNetwork/>
+        element: <PaymentNetwork />
       },
-    {
-      path:"/payment/:id/currency",
-      element:<PaymentCurrency/>
-    }
-    ]
-  },
+      {
+        path: "/payment/:id/currency",
+        element: <PaymentCurrency />
+      },
+      {
+        path: "/payment/:id/process",
+        element: <PaymentProccess />
+      },
+      {
+        path: "/payment/:id/success",
+        element: <PaymentSuccessful />
+      }
+    ],
+  }
 ]);
 
 root.render(

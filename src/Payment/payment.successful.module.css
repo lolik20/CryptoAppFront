@@ -1,0 +1,25 @@
+.container{
+    /* background-image: url(../Icons/confeti.png); */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.successBlock{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.successText{
+    color: #FCA311;
+    font-size: 22px;
+    font-weight: 500;
+}
+.successAmount{
+    color: #fff;
+    font-size: 26px;
+    font-weight: 500;
+}

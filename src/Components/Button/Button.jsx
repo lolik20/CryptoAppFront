@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom"
 import List from "../../List/List"
 import styles from "./button.module.css"
-export default function Button({ text, style, icon, onClick, href }) {
+export default function Button({ text, style, icon, onClick, href,isDisabled }) {
 
-    return (<Link to={href} style={style} className={styles.container}>
+    const isDisabledStyles = {
+        opacity:0.5
+    }
+    return (<Link to={href} onClick={onClick}  style={style} className={styles.container}>
         <span className={styles.text}>{text}</span>
         {icon &&
             <img src={icon} height={30}></img>

@@ -9,7 +9,7 @@ import rightArrow from "../Icons/arrow_right_alt.svg"
 import React from "react"
 import { useOutletContext } from "react-router-dom"
 export default function PaymentNetwork() {
-    const [payment, networks, setNetworks, currencies, setCurrencies] = useOutletContext()
+    const [payment, networks, setNetworks, currencies, setCurrencies, , setPayment] = useOutletContext()
     console.log(networks)
     const chooseNetwork = (id) => {
         const newState = networks.map((obj) => {
@@ -23,6 +23,8 @@ export default function PaymentNetwork() {
 
         })
         setNetworks(newState)
+        const network = networks.find(x=>x.id==id)
+        setPayment({ ...payment, toNetwork: network })
     }
     return (<div className={styles.container}>
         <h1 style={colors.default}>Выберите сеть</h1>

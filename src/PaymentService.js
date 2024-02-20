@@ -17,6 +17,14 @@ export default function usePaymentService() {
     const getCurrencies = async () => {
         return axios.get(`${host}/api/currency/all`)
     }
-    
-    return { networks, setNetworks, currencies, setCurrencies,getPayment }
+    const updatePayment = async (paymentId, networkId, currencyId) => {
+        const body = {
+            networkId: networkId,
+            currencyId: currencyId,
+            id:paymentId
+        }
+        return axios.put(`${host}/api/payment`, body)
+    }
+
+    return { networks, setNetworks, currencies, setCurrencies, getPayment, updatePayment }
 }
