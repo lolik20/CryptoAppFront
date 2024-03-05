@@ -37,6 +37,6 @@ export default function PaymentCurrency() {
 
         </List>
         
-        <Button text="Оплатить" onClick={()=>updatePayment(payment.id,payment.toNetwork.id,payment.toCurrency.id)} icon={rightArrow} href={`/payment/${payment.id}/process/wallet`} style={colors.button}></Button>
+        <Button text="Оплатить" onClick={()=>updatePayment(payment.id,payment.toNetwork.id,payment.toCurrency.id)} icon={rightArrow} href={`/payment/${payment.id}/process`} style={colors.button}></Button>
     </div>)
 }
