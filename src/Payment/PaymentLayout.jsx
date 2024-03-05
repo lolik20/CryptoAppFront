@@ -11,15 +11,7 @@ export default function PaymentLayout() {
     const [payment, setPayment] = useState({
         toAmount: 0
     })
-    const [value, setValue] = useState(0)
-    useEffect(() => {
-
-        if (payment.toAmount != null) {
-            setValue(ethers.parseUnits(`${payment.toAmount}`, "ether"))
-
-        }
-
-    }, [payment.toAmount])
+    
     const { id } = useParams()
     useEffect(() => {
         getPayment(id).then(response => setPayment(response.data))
@@ -47,10 +39,7 @@ export default function PaymentLayout() {
                 ethersConfig: defaultConfig({ metadata }),
                 chains: [mainnet],
                 projectId,
-                enableAnalytics: true,
-                themeVariables: {
-                    '--w3m-color-mix': '#fff'
-                }
+                enableAnalytics: true
             })
         }
     }, [payment])
@@ -77,6 +66,6 @@ export default function PaymentLayout() {
 
 
 
-        <Outlet context={[payment, networks, setNetworks, getCurrencies, updatePayment, setPayment, getPayment, value]}></Outlet>
+        <Outlet context={[payment, networks, setNetworks, getCurrencies, updatePayment, setPayment, getPayment]}></Outlet>
     </div>)
 }
