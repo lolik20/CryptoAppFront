@@ -9,7 +9,7 @@ import rightArrow from "../Icons/arrow_right_alt.svg"
 import React from "react"
 import { useOutletContext } from "react-router-dom"
 export default function PaymentNetwork() {
-    const [payment, networks, setNetworks, currencies, setCurrencies, , setPayment] = useOutletContext()
+    const [payment, networks, setNetworks, getCurrencies, updatePayment, setPayment, getPayment, value] = useOutletContext()
     console.log(networks)
     const chooseNetwork = (id) => {
         const newState = networks.map((obj) => {

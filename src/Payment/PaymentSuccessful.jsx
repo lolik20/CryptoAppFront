@@ -10,7 +10,7 @@ export default function PaymentSuccessful() {
             <div className={styles.successBlock}>
                 <img src={success} width={130} height={130} />
                 <span className={styles.successText}>Успешно оплачено</span>
-                <span className={styles.successAmount}>{payment?.fromAmount}$</span>
+                <span className={styles.successAmount}>{payment?.fromAmount}<img src={payment.fromCurrency.imageUrl}></img></span>
 
 
                 <Button style={colors.button} text="Вернуться в магазин"></Button>

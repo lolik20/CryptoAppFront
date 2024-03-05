@@ -5,11 +5,21 @@ import colors from "../Const/colors"
 import usePaymentService from "../PaymentService"
 import { Label, labelColors } from "../Components/Label/Label"
 import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react"
+import { ethers } from "ethers"
 export default function PaymentLayout() {
-    const { networks, setNetworks, currencies, setCurrencies, getPayment, updatePayment } = usePaymentService()
+    const { networks, setNetworks, getCurrencies, getPayment, updatePayment } = usePaymentService()
     const [payment, setPayment] = useState({
         toAmount: 0
     })
+    const [value, setValue] = useState(0)
+    useEffect(() => {
+
+        if (payment.toAmount != null) {
+            setValue(ethers.parseUnits(`${payment.toAmount}`, "ether"))
+
+        }
+
+    }, [payment.toAmount])
     const { id } = useParams()
     useEffect(() => {
         getPayment(id).then(response => setPayment(response.data))
@@ -17,7 +27,6 @@ export default function PaymentLayout() {
     useEffect(() => {
         if (payment.toNetwork != null) {
             const projectId = '13a04f989ccceb2c3c67f6eba7daa072'
-
             const mainnet = {
                 chainId: payment.toNetwork.chainId,
                 name: payment.toNetwork.name,
@@ -38,15 +47,14 @@ export default function PaymentLayout() {
                 ethersConfig: defaultConfig({ metadata }),
                 chains: [mainnet],
                 projectId,
-                enableAnalytics: true // Optional - defaults to your Cloud configuration
+                enableAnalytics: true,
+                themeVariables: {
+                    '--w3m-color-mix': '#fff'
+                }
             })
         }
     }, [payment])
-    // useEffect(() => {
-    //     if (payment.status == 2 && !window.location.href.includes("success")) {
-    //         window.location.href = `/payment/${payment.id}/success`
-    //     }
-    // }, [payment?.status])
+
     return (<div className={styles.container}>
         {payment.status != 2 &&
 
@@ -59,7 +67,7 @@ export default function PaymentLayout() {
                 </div>
                 {payment.toCurrency &&
                     <div style={{ display: "flex", gap: 5, alignItems: 'center' }}>
-                        <h2 style={colors.white}><span style={colors.default}>К оплате:</span> {payment.toAmount} {payment.toCurrency.name}</h2>
+                        <h2 style={colors.white}><span style={colors.default}>К оплате:</span> {payment.toAmount} {payment.toCurrency.name} </h2>
 
                         <img width={20} height={20} style={{ borderRadius: "50%" }} src={payment.toCurrency.imageUrl}></img>
                         {/* <span style={{display:"inline-block",color:"#fff",backgroundColor:"#FCA311",padding:8,borderRadius:24,fontWeight:400}}>Ожидание оплаты</span> */}
@@ -69,6 +77,6 @@ export default function PaymentLayout() {
 
 
 
-        <Outlet context={[payment, networks, setNetworks, currencies, setCurrencies, updatePayment, setPayment, getPayment]}></Outlet>
+        <Outlet context={[payment, networks, setNetworks, getCurrencies, updatePayment, setPayment, getPayment, value]}></Outlet>
     </div>)
 }
