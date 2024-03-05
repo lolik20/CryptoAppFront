@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.08990237.css",
+    "main.js": "/static/js/main.e8526b11.js",
+    "static/js/744.6ded3d4f.chunk.js": "/static/js/744.6ded3d4f.chunk.js",
+    "static/js/868.d73dee95.chunk.js": "/static/js/868.d73dee95.chunk.js",
+    "static/media/binance-icon-2048x2048-eh77cmwj.png": "/static/media/binance-icon-2048x2048-eh77cmwj.fb02584764cfc74e8c0b.png",
+    "static/media/trust-wallet-logo.png": "/static/media/trust-wallet-logo.f77697b62d193b82559a.png",
+    "static/media/MetaMask_Fox.svg.png": "/static/media/MetaMask_Fox.svg.d9c41a5680a1daaae624.png",
+    "static/media/Solana_logo.png.webp": "/static/media/Solana_logo.png.cec8a53100289f8790d8.webp",
+    "static/media/success.svg": "/static/media/success.7c42f5f5ab925215d6c1d9f760ed9511.svg",
+    "index.html": "/index.html",
+    "static/media/arrow_right_alt.svg": "/static/media/arrow_right_alt.7643f08c10139d45f3dd6605ea656013.svg",
+    "main.08990237.css.map": "/static/css/main.08990237.css.map",
+    "main.e8526b11.js.map": "/static/js/main.e8526b11.js.map",
+    "744.6ded3d4f.chunk.js.map": "/static/js/744.6ded3d4f.chunk.js.map",
+    "868.d73dee95.chunk.js.map": "/static/js/868.d73dee95.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.08990237.css",
+    "static/js/main.e8526b11.js"
+  ]
+}
