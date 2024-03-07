@@ -67,5 +67,6 @@ export default function PaymentLayout() {
 
 
         <Outlet context={[payment, networks, setNetworks, getCurrencies, updatePayment, setPayment, getPayment]}></Outlet>
+        
     </div>)
 }

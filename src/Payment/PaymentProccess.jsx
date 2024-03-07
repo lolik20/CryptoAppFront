@@ -18,7 +18,7 @@ export default function PaymentProccess() {
                 setPayment(response.data)
             })
 
-        }, 1000);
+        }, 15000);
 
         return () => clearInterval(interval);
     }, []);
@@ -62,7 +62,7 @@ export default function PaymentProccess() {
            
         </div> */}
         <Outlet context={[payment, networks, setNetworks, getCurrencies, updatePayment, setPayment, getPayment]}></Outlet>
-        {/* <h5 style={{marginTop:150}}>Не хватает {payment.toCurrency?.name} на балансе?</h5>
-        <button>Купить</button> */}
+        <h4 >Не хватает {payment.toCurrency?.name} на балансе?</h4>
+        <button>Купить</button>
     </div>)
 }

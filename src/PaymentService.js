@@ -1,19 +1,19 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
-const host = "http://194.147.115.174:5226";
+const host = "http://localhost:5226";
 export default function usePaymentService() {
     const [networks, setNetworks] = useState([])
     useEffect(() => {
         getNetworks().then(promise => setNetworks(promise.data))
     }, [])
     const getPayment = async (paymentId) => {
-        return axios.get(`${host}/api/payment/${paymentId}`)
+        return axios.get(`${host}/api/v1/payment/${paymentId}`)
     }
     const getNetworks = async () => {
-        return axios.get(`${host}/api/network/all`)
+        return axios.get(`${host}/api/v1/network/all`)
     }
     const getCurrencies = async () => {
-        return axios.get(`${host}/api/currency/all`)
+        return axios.get(`${host}/api/v1/currency/all`)
     }
     const updatePayment = async (paymentId, networkId, currencyId) => {
         const body = {
@@ -21,7 +21,7 @@ export default function usePaymentService() {
             currencyId: currencyId,
             id:paymentId
         }
-        return axios.put(`${host}/api/payment`, body)
+        return axios.put(`${host}/api/v1/payment`, body)
     }
 
     return { networks, setNetworks, getCurrencies, getPayment, updatePayment }
