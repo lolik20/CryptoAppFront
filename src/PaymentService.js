@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
-const host = "https://localhost:5226";
+const host = "http://194.147.115.174:5226";
 export default function usePaymentService() {
     const [networks, setNetworks] = useState([])
     useEffect(() => {
