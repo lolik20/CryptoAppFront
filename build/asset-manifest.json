@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.40a9d238.css",
-    "main.js": "/static/js/main.54e97a08.js",
+    "main.js": "/static/js/main.fd4d7a84.js",
     "static/js/744.6ded3d4f.chunk.js": "/static/js/744.6ded3d4f.chunk.js",
     "static/js/868.d73dee95.chunk.js": "/static/js/868.d73dee95.chunk.js",
     "static/media/binance-icon-2048x2048-eh77cmwj.png": "/static/media/binance-icon-2048x2048-eh77cmwj.fb02584764cfc74e8c0b.png",
@@ -12,12 +12,12 @@
     "index.html": "/index.html",
     "static/media/arrow_right_alt.svg": "/static/media/arrow_right_alt.7643f08c10139d45f3dd6605ea656013.svg",
     "main.40a9d238.css.map": "/static/css/main.40a9d238.css.map",
-    "main.54e97a08.js.map": "/static/js/main.54e97a08.js.map",
+    "main.fd4d7a84.js.map": "/static/js/main.fd4d7a84.js.map",
     "744.6ded3d4f.chunk.js.map": "/static/js/744.6ded3d4f.chunk.js.map",
     "868.d73dee95.chunk.js.map": "/static/js/868.d73dee95.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.40a9d238.css",
-    "static/js/main.54e97a08.js"
+    "static/js/main.fd4d7a84.js"
   ]
 }
