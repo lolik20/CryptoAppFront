@@ -51,6 +51,9 @@ export default function EthPay({ payment }) {
         <React.Fragment>
             {
                 isConnected && <React.Fragment>
+                  
+                    <span>Подключенный кошелёк</span>
+                    <w3m-account-button />
                     {
                         !isDisabled &&
                         <Button onClick={() => pay()} style={colors.button} text="Оплатить"></Button>
@@ -58,8 +61,6 @@ export default function EthPay({ payment }) {
                     {isDisabled &&
                         <span>Загружаем платёж...</span>
                     }
-                    <span>Подключенный кошелёк</span>
-                    <w3m-account-button />
                 </React.Fragment>
             }
             {!isConnected &&
