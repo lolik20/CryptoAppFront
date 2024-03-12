@@ -30,8 +30,8 @@ export default function PaymentProccess() {
         <div style={{ textAlign: "center", display: "flex", alignItems: "center", flexDirection: "column", gap: 20 }}>
             <span>Способ оплаты</span>
             <div className={styles.bricks}>
-                <Brick to={`/payment/${payment.id}/process/metamask`} logo={metamaskIcon} title="Metamask" > </Brick>
-                <Brick to={`/payment/${payment.id}/process/trustwallet`} logo={trustWallet} title="TrustWallet"></Brick>
+                <Brick to={`/payment/${payment.id}/proccess/metamask`} logo={metamaskIcon} title="Metamask" > </Brick>
+                <Brick to={`/payment/${payment.id}/proccess/trustwallet`} logo={trustWallet} title="TrustWallet"></Brick>
                 <Brick logo={bybitlogo} title="ByBit" ></Brick>
                 <Brick logo={binanceLogo} title="Binance"></Brick>
             </div>
