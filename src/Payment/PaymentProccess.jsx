@@ -30,7 +30,7 @@ export default function PaymentProccess() {
         <div style={{ textAlign: "center", display: "flex", alignItems: "center", flexDirection: "column", gap: 20 }}>
             <span>Способ оплаты</span>
             <div className={styles.bricks}>
-                <Brick to={`/payment/${payment.id}/proccess/metamask`} logo={metamaskIcon} title="Metamask" > </Brick>
+                <Brick to={`/payment/${payment.id}/proccess/metamask`} logo={metamaskIcon} title="Metamask"></Brick>
                 <Brick to={`/payment/${payment.id}/proccess/trustwallet`} logo={trustWallet} title="TrustWallet"></Brick>
                 <Brick logo={bybitlogo} title="ByBit" ></Brick>
                 <Brick logo={binanceLogo} title="Binance"></Brick>
@@ -62,7 +62,7 @@ export default function PaymentProccess() {
            
         </div> */}
         <Outlet context={[payment, networks, setNetworks, getCurrencies, updatePayment, setPayment, getPayment]}></Outlet>
-        <h4 >Не хватает {payment.toCurrency?.name} на балансе?</h4>
-        <button>Купить</button>
+        {/* <h4 >Не хватает {payment.toCurrency?.name} на балансе?</h4>
+        <button>Купить</button> */}
     </div>)
 }
