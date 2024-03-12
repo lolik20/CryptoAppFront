@@ -3,19 +3,18 @@ import { Outlet, useParams } from "react-router-dom"
 import styles from "./payment.layout.module.css"
 import colors from "../Const/colors"
 import usePaymentService from "../PaymentService"
-import { Label, labelColors } from "../Components/Label/Label"
 import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react"
-import { ethers } from "ethers"
 export default function PaymentLayout() {
     const { networks, setNetworks, getCurrencies, getPayment, updatePayment } = usePaymentService()
+    const { id } = useParams()
+
     const [payment, setPayment] = useState({
         toAmount: 0
     })
     
-    const { id } = useParams()
     useEffect(() => {
         getPayment(id).then(response => setPayment(response.data))
-    }, [])
+    }, [id])
     useEffect(() => {
         if (payment.toNetwork != null) {
             const projectId = '13a04f989ccceb2c3c67f6eba7daa072'
@@ -66,7 +65,7 @@ export default function PaymentLayout() {
 
 
 
-        <Outlet context={[payment, networks, setNetworks, getCurrencies, updatePayment, setPayment, getPayment]}></Outlet>
+        <Outlet context={[payment, networks, setNetworks, getCurrencies, updatePayment, setPayment, getPayment,id]}></Outlet>
         
     </div>)
 }

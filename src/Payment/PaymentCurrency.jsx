@@ -28,15 +28,15 @@ export default function PaymentCurrency() {
         const currency = currencies.find(x=>x.id==id)
         setPayment({...payment,toCurrency:currency,toAmount:(payment.fromAmount * currency.rate).toFixed(2)})
     }
+
     return (<div className={styles.container}>
         <h1 style={colors.default}>Выберите валюту</h1>
         <List>
             {currencies?.filter(x=>x.type!=2).map((x) =>
                 <ListItem amount={ (payment.fromAmount * x.rate).toFixed(2)} isActive={x.isActive} key={x.id} onClick={() => chooseCurrency(x.id)} text={x.name} icon={x.imageUrl} />
             )}  
-
         </List>
         
-        <Button text="Оплатить" onClick={()=>updatePayment(payment.id,payment.toNetwork.id,payment.toCurrency.id).then(x=> window.location.href=`/payment/${payment.id}/process`)} icon={rightArrow} style={colors.button}></Button>
+        <Button text="Оплатить" onClick={()=>updatePayment(payment.id,payment.toNetwork.id,payment.toCurrency.id).then(x=> window.location.href=`/payment/${payment.id}/proсcess`)} icon={rightArrow} style={colors.button}></Button>
     </div>)
 }

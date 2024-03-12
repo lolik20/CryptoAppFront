@@ -10,7 +10,6 @@ import React from "react"
 import { useOutletContext } from "react-router-dom"
 export default function PaymentNetwork() {
     const [payment, networks, setNetworks, getCurrencies, updatePayment, setPayment, getPayment, value] = useOutletContext()
-    console.log(networks)
     const chooseNetwork = (id) => {
         const newState = networks.map((obj) => {
             console.log(obj)

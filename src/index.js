@@ -26,14 +26,14 @@ const router = createBrowserRouter([
         element: <PaymentCurrency />
       },
       {
-        path: "/payment/:id/process",
+        path: "/payment/:id/proccess",
         element: <PaymentProccess />,
         children: [
           {
-            path: "/payment/:id/process/metamask",
+            path: "/payment/:id/proccess/metamask",
             element: <Metamask />
           }, {
-            path: "/payment/:id/process/trustwallet",
+            path: "/payment/:id/proccess/trustwallet",
             element: <TrustWallet />
           }
         ]
